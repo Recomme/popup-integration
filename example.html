@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RECOMME - example page</title>
+    <style>
+        html {
+            font-size: 13px;
+        }
+        .btn {
+            padding: 5px 7px;
+            background: red;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .btn.share {
+            background-color:blue;
+        }
+
+        .blur-filter {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        #r-popup {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .25s ease-in-out;
+
+            right: 0;
+            left: 0;
+            position: fixed;
+            overflow-y: auto;
+            top: 0;
+            bottom: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(30,41,51,.45);
+        }
+
+        .r-popup-container {
+            display: flex;
+            pointer-events: none;
+            margin: auto 0;
+            padding: 16px 48px;
+            box-sizing: border-box;
+            max-width: 100%;
+
+            -webkit-transform:scale(0.9);
+            -moz-transform-scale(0.9);
+        }
+
+        .r-close-button-container {
+            margin-right: -48px;
+            padding: 0 8px;
+            order: 1;
+            align-self: flex-start;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 16px;
+            user-select: none;
+        }
+
+        .r-popup-iframe-container {
+            pointer-events: auto;
+            max-width: 100%;
+            flex: 1;
+            user-select: none;
+        }
+        
+        .r-close-button-container button {
+            transition: background-color .25s ease-in-out;
+            background-color: rgba(53,71,90,.2);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            pointer-events: auto;
+            color: #fff;
+            justify-content: center;
+            min-width: unset;
+            outline: none;
+            text-transform: inherit;
+            font: inherit;
+            user-select: none;
+        }
+
+        #r-popup-iframe {
+            background: #fff;
+            box-shadow: 0 0 0 1px rgba(64,87,109,.07), 0 2px 18px rgba(47,64,80,.25);
+            border-radius: 8px;
+            margin: 0 auto;
+            display: block; 
+            border: none;
+            height: 90vh;
+        }
+
+    </style>
+  </head>
+  <body>
+    
+    <div id="main" style="margin: 0 auto;width: 400px;">
+        <h1>Apple iPhone Xr 64GB White</h1>
+        <img src="product_img.png" width="400px"/>
+        <p>
+            iPhone Xr 64 GB biały to niezwykły smartfon. Posiada najbardziej zaawansowany w branży ekran LCD, ulepszone FaceID oraz najszybszy procesor użyty kiedykolwiek w smartfonie. Jest również odporny na wodę i pył, a to dzięki pięknej konstrukcji ze szkła i metalu.
+
+    Sprawdź, jak iPhone Xr 64 GB biały wygląda w rzeczywistości. Chwyć zdjęcie poniżej i przeciągnij je w lewo lub prawo aby obrócić produkt lub skorzystaj z przycisków nawigacyjnych.
+        </p>
+        <a class="btn" href="#">Kup teraz</a>
+        <a class="btn share" href="https://firmatestowa.recomme.pl/k?p_name=Zmie%C5%84%20Kurs%20-%20L.%20David%20Marquet&p_img=https%3A%2F%2Fwww.osmpower.pl%2Fenvironment%2Fcache%2Fimages%2F500_500_productGfx_1939%2FZmien-Kurs---L.-David-Marquet.jpg" 
+            data-r-popup="https://firmatestowa.recomme.pl/k?p_name=Zmie%C5%84%20Kurs%20-%20L.%20David%20Marquet&p_img=https%3A%2F%2Fwww.osmpower.pl%2Fenvironment%2Fcache%2Fimages%2F500_500_productGfx_1939%2FZmien-Kurs---L.-David-Marquet.jpg" >Poleć produkt znajomemu</a>
+        
+    </div>
+
+    
+
+    <div id="r-popup">
+        <div class="r-popup-container">
+            <div class="r-close-button-container">
+                <button class="r-close-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13.06 12.15l5.02-5.03a.75.75 0 1 0-1.06-1.06L12 11.1 6.62 5.7a.75.75 0 1 0-1.06 1.06l5.38 5.38-5.23 5.23a.75.75 0 1 0 1.06 1.06L12 13.2l4.88 4.87a.75.75 0 1 0 1.06-1.06l-4.88-4.87z"></path></svg>
+                </button>
+            </div>
+            <div class="r-popup-iframe-container">
+                <iframe id="r-popup-iframe"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- <script async defer crossorigin="anonymous" src="recomme-popup.js"></script> -->
+    <script async defer src="recomme-popup.js"></script>
+
+  </body>
+  
+</html>
