@@ -11,9 +11,6 @@ class RecommePopup {
     };
 
     constructor() {
-
-        //TODO catch main element from config for blur 
-
         this.buildPopupEl();
     }
 
@@ -21,7 +18,6 @@ class RecommePopup {
         this.addListeners();
         var body = document.querySelector('body');
     }
-
 
     buildPopupEl = function() {
         var p = document.getElementById('r-popup');
@@ -31,8 +27,6 @@ class RecommePopup {
         i.width = this.config.iframeWidth;
         i.height = this.config.iframeHeight;
     
-        // p.appendChild(i);
-
         this.recommeIframeEl = i;
         this.recommePopupEl = p;
     }
@@ -68,22 +62,10 @@ class RecommePopup {
 
         var body = document.querySelector('#main');
         body.classList.add('blur-filter');
-        // console.log(this.recommePopupEl);
+
         this.recommePopupEl.style.visibility = "visible";
         this.recommePopupEl.style.opacity = "1";
     }
-
-    // runPopup = function(e) {
-    //     e.preventDefault();
-    //     var rPopupIframe = document.querySelector('#r-iframe');
-    //     rPopupIframe.src=this.dataset.rPopup;
-
-    //     this.showPopup();
-
-    //     // var popup = document.getElementById('r-popup');
-    //     // popup.style.display = "block"
-    //     // this.recommePopupEl.style.display = "block";
-    // }
 };
 
 var recommePopup = new RecommePopup();
